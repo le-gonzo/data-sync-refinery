@@ -80,6 +80,12 @@ Here's an overview of the main directories and their purposes:
         - `/transformers`: (Expand with individual files when created) Contains classes to transform and process the extracted data.
         - `/loaders`: (Expand with individual files when created) Includes classes for loading the transformed data into desired destinations.
         - `etl_runner.py`: Orchestrates the end-to-end ETL process, linking extractors, transformers, and loaders.
+    - `/config_management`: (or `/secrets`)
+        - `abstract_manager.py`: Contains the `AbstractSecretManager` class.
+        - `aws_manager.py`: Implementation for AWS Secrets Manager (`AWSSecretManager` class).
+        - `azure_manager.py`: Implementation for Azure Key Vault (`AzureKeyVaultManager` class).
+        - `gcp_manager.py`: Implementation for Google Cloud Secret Manager.
+        - `factory.py`: Contains the `get_secret_manager` factory function.
     - `/tests`: Directory for all unit and integration tests. (Expand on specifics when you have detailed tests)
     - `environment.yml`: Conda environment configuration detailing project dependencies.
     - `config.ini`: Configuration settings for the ETL processes, such as data source details and connection parameters.

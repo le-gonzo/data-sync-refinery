@@ -80,7 +80,7 @@ Here's an overview of the main directories and their purposes:
         - `/transformers`: (Expand with individual files when created) Contains classes to transform and process the extracted data.
         - `/loaders`: (Expand with individual files when created) Includes classes for loading the transformed data into desired destinations.
         - `etl_runner.py`: Orchestrates the end-to-end ETL process, linking extractors, transformers, and loaders.
-    - `/config_management`: (or `/secrets`)
+    - `/config_management`:
         - `abstract_manager.py`: Contains the `AbstractSecretManager` class.
         - `aws_manager.py`: Implementation for AWS Secrets Manager (`AWSSecretManager` class).
         - `azure_manager.py`: Implementation for Azure Key Vault (`AzureKeyVaultManager` class).

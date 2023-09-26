@@ -81,9 +81,12 @@ Here's an overview of the main directories and their purposes:
         - `/loaders`: (Expand with individual files when created) Includes classes for loading the transformed data into desired destinations.
         - `etl_runner.py`: Orchestrates the end-to-end ETL process, linking extractors, transformers, and loaders.
     - `/tests`: Directory for all unit and integration tests. (Expand on specifics when you have detailed tests)
+    - `environment.yml`: Conda environment configuration detailing project dependencies.
     - `config.ini`: Configuration settings for the ETL processes, such as data source details and connection parameters.
     - `main.py`: The main entry point for executing ETL jobs.
-    - `README.md`: The document you're currently reading. Provides an overview and instructions for the project.
+    - `README.md`: Provides an overview and instructions for the project.
+    - `LICENSE.txt`: GNU GPL v3 license.
+    - `.gitignore` 
 
 ### Testing
 

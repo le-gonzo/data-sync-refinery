@@ -81,7 +81,7 @@ Here's an overview of the main directories and their purposes:
         - `/loaders`: (Expand with individual files when created) Includes classes for loading the transformed data into desired destinations.
         - `etl_runner.py`: Orchestrates the end-to-end ETL process, linking extractors, transformers, and loaders.
     - `/tests`: Directory for all unit and integration tests. (Expand on specifics when you have detailed tests)
-    - `config.py`: Configuration settings for the ETL processes, such as data source details and connection parameters.
+    - `config.ini`: Configuration settings for the ETL processes, such as data source details and connection parameters.
     - `main.py`: The main entry point for executing ETL jobs.
     - `README.md`: The document you're currently reading. Provides an overview and instructions for the project.
 
@@ -95,7 +95,11 @@ TO-DO: State if you're open to contributions and how others can contribute to th
 
 ## License
 
-TO-DO: mention the license under which the project is available.
+Copyright (C) 2023 Luis Enrique Gonzalez
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
 ## Acknowledgments
 

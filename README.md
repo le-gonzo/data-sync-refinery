@@ -44,7 +44,12 @@
 4. **Install Dependencies**:
     ```
     pip install -r requirements.txt  # If you have a requirements file
-    ```
+    ``````
+
+5. **Setup Configuration Settings***
+   
+   - Copy the `config.ini.template` file and rename the copy to `config.ini`.
+   - Edit `config.ini` and replace placeholders with appropriate values.
 
 ### Usage
 

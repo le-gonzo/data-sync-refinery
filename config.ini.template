@@ -1,0 +1,3 @@
+[Secrets]
+# Specify the secret manager to use. Options: 'AWS', 'AZURE', 'GCP', etc.
+SECRET_MANAGER = YOUR_SECRET_MANAGER_HERE

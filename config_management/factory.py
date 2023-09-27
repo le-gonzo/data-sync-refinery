@@ -1,5 +1,6 @@
 import configparser
 from abc import ABC, abstractmethod
+from importlib import import_module
 from typing import Type, Dict
 
 # --- Configuration Loading ---
@@ -14,8 +15,8 @@ def load_configuration() -> str:
     except KeyError:
         raise ValueError("SECRET_MANAGER is not defined in the config.ini file.")
     
-    if manager not in managers.keys():
-        supported_managers = ', '.join(managers.keys())
+    if manager not in manager_module_map.keys():
+        supported_managers = ', '.join(manager_module_map.keys())
         raise ValueError(f"Unsupported SECRET_MANAGER value: {manager}. Supported values are: {supported_managers}")
     
     return manager
@@ -37,36 +38,12 @@ class AbstractSecretManager(ABC):
         """Set a secret for a given key."""
         pass
 
-# --- Concrete Implementations ---
+# --- Mapping for Dynamic Imports ---
 
-class AWSSecretManager(AbstractSecretManager):
-    """AWS-specific implementation of secret manager."""
-
-    def get_secret(self, key: str) -> str:
-        # TODO: Implement AWS-specific code to fetch a secret
-        pass
-
-    def set_secret(self, key: str, value: str):
-        # TODO: Implement AWS-specific code to set a secret
-        pass
-
-class AzureKeyVaultManager(AbstractSecretManager):
-    """Azure-specific implementation of secret manager."""
-
-    def get_secret(self, key: str) -> str:
-        # TODO: Implement Azure-specific code to fetch a secret
-        pass
-
-    def set_secret(self, key: str, value: str):
-        # TODO: Implement Azure-specific code to set a secret
-        pass
-
-# --- Secret Managers Dictionary ---
-
-managers: Dict[str, Type['AbstractSecretManager']] = {
-    'AWS': AWSSecretManager,
-    'AZURE': AzureKeyVaultManager
-    # Add other secret managers as needed
+manager_module_map = {
+    'AWS': ('config_management.aws_manager', 'AWSSecretManager'),
+    'AZURE': ('config_management.azure_manager', 'AzureKeyVaultManager'),
+    'INI': ('config_management.ini_manager', 'INISecretManager')
 }
 
 # --- Factory Function ---
@@ -80,8 +57,6 @@ def get_secret_manager() -> AbstractSecretManager:
     Raises:
         ValueError: If the specified secret manager in the configuration is not supported.
     """
-    try:
-        return managers[SECRET_MANAGER]()
-    except KeyError:
-        supported_managers = ', '.join(managers.keys())
-        raise ValueError(f"Unsupported secret manager: {SECRET_MANAGER}. Supported managers are: {supported_managers}")
+    module_name, class_name = manager_module_map[SECRET_MANAGER]
+    ManagerClass = getattr(import_module(module_name), class_name)
+    return ManagerClass()

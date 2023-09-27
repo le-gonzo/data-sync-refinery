@@ -1,9 +1,11 @@
 [General]
-# Specify the secret manager to use. Options: 'AWS', 'AZURE', etc.
+# Specify the secret manager to use. Options: 'INI', 'AWS', 'AZURE', etc.
+# NOTE INI option is suitable for development/testing but should not be used in production environments
 SECRET_MANAGER = YOUR_SECRET_MANAGER_HERE
 
 [CredentialsPaths]
 # Standard paths or environment variable names for credentials
+INI = PATH_TO_SECRETS_INI_FILE
 AWS = AWS_CREDENTIAL_ENV_VAR_OR_PATH
 AZURE = AZURE_CREDENTIAL_ENV_VAR_OR_PATH
 # ... add more as needed

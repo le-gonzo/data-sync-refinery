@@ -1,3 +1,9 @@
-[Secrets]
+[General]
 # Specify the secret manager to use. Options: 'AWS', 'AZURE', etc.
 SECRET_MANAGER = YOUR_SECRET_MANAGER_HERE
+
+[CredentialsPaths]
+# Standard paths or environment variable names for credentials
+AWS = AWS_CREDENTIAL_ENV_VAR_OR_PATH
+AZURE = AZURE_CREDENTIAL_ENV_VAR_OR_PATH
+# ... add more as needed

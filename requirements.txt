@@ -1,0 +1,4 @@
+#TODO: eventually will need to create a setup.py file to dynamically create a requirements file
+boto3==1.20.0  # This is an example version, you should choose the most recent or a version you're comfortable with.
+azure-identity==1.7.0  # Required for Azure authentication.
+azure-keyvault-secrets==4.3.0  # Required for accessing Azure Key Vault secrets.

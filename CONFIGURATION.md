@@ -14,7 +14,7 @@ Section for secret management tool configurations.
 
 **SECRET_MANAGER**: Specifies the secret management tool in use.
 - **Type**: String
-- **Allowed Values**: 'AWS', 'AZURE'
+- **Allowed Values**: 'AWS', 'AZURE', INI'
 - **Example**: `SECRET_MANAGER = AWS`
 - **Description**: Determines which secret manager implementation to use. It should match one of the secret manager providers available in the project.
 

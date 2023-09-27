@@ -32,7 +32,7 @@
 
 2. **Navigate to the Directory**:
     ```
-    cd HealthSyncRefinery
+    cd data-sync-refinery
     ```
 
 3. **Setup a Virtual Environment** (optional but recommended):
@@ -49,7 +49,7 @@
 5. **Setup Configuration Settings***
    
    - Copy the `config.ini.template` file and rename the copy to `config.ini`.
-   - Edit `config.ini` and replace placeholders with appropriate values.
+   - Edit `config.ini` and replace placeholders with appropriate values. See: `CONFIGURATION.md`.
 
 ### Usage
 
@@ -71,7 +71,7 @@ TO-DO: Briefly explain the configuration parameters and how users can modify the
 
 Here's an overview of the main directories and their purposes:
 
-- `/DataSyncRefinery`: The root directory of the project.
+- `/data-sync-refinery`: The root directory of the project.
     - `/etl`: Contains all the main ETL logic components.
         - `/base`: Holds the base class and foundational utilities for the ETL processes.
             - `etl_base.py`: The abstract base class for ETL operations.

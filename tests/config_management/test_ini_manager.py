@@ -1,3 +1,5 @@
+# Run test with
+# python3.6 -m unittest tests.config_management.test_ini_manager
 import unittest
 from unittest.mock import patch, mock_open
 from config_management.ini_manager import INISecretManager

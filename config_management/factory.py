@@ -43,7 +43,8 @@ class AbstractSecretManager(ABC):
 manager_module_map = {
     'AWS': ('config_management.aws_manager', 'AWSSecretManager'),
     'AZURE': ('config_management.azure_manager', 'AzureKeyVaultManager'),
-    'INI': ('config_management.ini_manager', 'INISecretManager')
+    'INI': ('config_management.ini_manager', 'INISecretManager'),
+    'YAML': ('config_management.yaml_manager', 'YAMLSecretManager')
 }
 
 # --- Factory Function ---

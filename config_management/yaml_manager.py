@@ -15,7 +15,7 @@ class YAMLSecretManager(AbstractSecretManager):
         with open(self.filepath, 'r') as file:
             self.config = yaml.safe_load(file)
 
-    def get(self, section: str, key: str) -> str:
+    def get_secret(self, section: str, key: str) -> str:
         """
         Retrieve a value associated with a given section and key.
 
@@ -34,7 +34,7 @@ class YAMLSecretManager(AbstractSecretManager):
         except KeyError:
             raise ValueError(f"Section '{section}' or Key '{key}' not found in {self.filepath}.")
 
-    def set(self, section: str, key: str, value: str) -> None:
+    def set_secret(self, section: str, key: str, value: str) -> None:
         """
         Set a value for a given section and key in the YAML file.
 

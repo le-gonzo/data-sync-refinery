@@ -24,7 +24,7 @@ class ConfigLoader:
         section = dict(config.items(db_type))
 
         # Handle special characters in the password
-        section['db_password'] = section['db_password']
+        #section['db_password'] = section['db_password'] #Redundent
 
 
         # print out the section for debugging

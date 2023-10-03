@@ -3,7 +3,7 @@ import os
 import requests
 from requests_ntlm import HttpNtlmAuth
 
-from etl.base.base_extractor import BaseExtractor
+from base.base_extractor import BaseExtractor
 from config_management.factory import get_secret_manager
 
 

@@ -1,3 +1,6 @@
+#plugins
+etl/plugins/extractors/ssrs_extractor_plugin/
+
 #secrets.ini
 secrets.ini
 

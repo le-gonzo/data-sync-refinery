@@ -1,0 +1,15 @@
+ssrs:
+  base_url: "https://webreports.hs.uci.edu/ReportServer"
+  parameters:
+    "Start_Date": "09/27/2023 00:00:00"
+    "End_Date": "09/27/2023 00:00:00"
+    "rs:ParameterLanguage": ""
+    "rs:Command": "Render"
+    "rs:Format": "CSV"
+    "rc:ItemPath":Tablix1
+
+another_source:
+  base_url: "https://example.com/api"
+  parameters:
+    key1: "valueA"
+    key2: "valueB"

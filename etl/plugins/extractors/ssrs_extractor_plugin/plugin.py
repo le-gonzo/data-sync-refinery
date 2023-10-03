@@ -13,11 +13,11 @@ class SSRSExtractor(BaseExtractor):
     BASE_URL = "https://webreports.hs.uci.edu/ReportServer"
 
     def __init__(self):
-        self.username = self.secret_manager.get_secret('ssrs', 'SSRS_USERNAME')
-        self.password = self.secret_manager.get_secret('ssrs', 'SSRS_PASSWORD')
+        self.username = self.secret_manager.get_secret('ssrs_credentials', 'username')
+        self.password = self.secret_manager.get_secret('ssrs_credentials', 'password')
 
     def connect(self):
-        # For SSRS, there might not be a traditional "connect" step since it's more about HTTP requests
+        # For SSRS, there is no traditional "connect" step since it's more about HTTP requests
         pass
 
     def extract(self, parameters, output_path=None, filename=None):

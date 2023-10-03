@@ -2,6 +2,7 @@ import configparser
 from sqlalchemy import create_engine, exc
 import os
 import psycopg2
+from urllib.parse import quote
 
 
 class DatabaseConfigError(Exception):
@@ -24,7 +25,6 @@ class ConfigLoader:
         section = dict(config.items(db_type))
 
         # Handle special characters in the password
-        #section['db_password'] = section['db_password'] #Redundent
 
 
         # print out the section for debugging
@@ -41,6 +41,11 @@ class ConnectionManager:
         "mysql": "mysql+mysqlconnector://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}",
         "postgres": "postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
     }
+
+    @staticmethod
+    def escape_percent(value: str) -> str:
+        """Escape the percent character for SQLAlchemy connection strings."""
+        return value.replace('%', '%%')
 
     def __init__(self, db_type, config_path):
         """
@@ -66,7 +71,7 @@ class ConnectionManager:
 
         db_user = self._config['db_user']
         # Double the '%' character for SQLAlchemy, then URI encode the password
-        db_password = self._config['db_password']
+        db_password = self.escape_percent(self._config['db_password'])
         db_host = self._config['db_host']
         db_port = self._config['db_port']
         db_name = self._config['db_name']

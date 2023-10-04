@@ -1,15 +1,31 @@
 ssrs:
-  base_url: "https://webreports.hs.uci.edu/ReportServer"
-  parameters:
-    "Start_Date": "09/27/2023 00:00:00"
-    "End_Date": "09/27/2023 00:00:00"
-    "rs:ParameterLanguage": ""
-    "rs:Command": "Render"
-    "rs:Format": "CSV"
-    "rc:ItemPath":Tablix1
-
-another_source:
-  base_url: "https://example.com/api"
-  parameters:
-    key1: "valueA"
-    key2: "valueB"
+  ReportServer_url: "https://webreports.hs.uci.edu/ReportServer"
+  data_sources:
+    ed_events: 
+      report_path: "/Epic/Emergency/ED Events"
+      parameters:
+        "Start_Date": "09/27/2023 00:00:00"
+        "End_Date": "09/27/2023 00:00:00"
+        "rs:ParameterLanguage": ""
+        "rs:Command": "Render"
+        "rs:Format": "CSV"
+        "rc:ItemPath":Tablix1
+    ed_observation:
+      report_path: "/Epic/Emergency/ED Observation"
+      parameters:
+        "Start_Date": "09/27/2023 00:00:00"
+        "End_Date": "09/27/2023 00:00:00"
+        "rs:ParameterLanguage": ""
+        "rs:Command": "Render"
+        "rs:Format": "CSV"
+        "rc:ItemPath":Tablix1
+    trauma_one:
+      report_path: "/Epic/Emergency/UCI02_EDX_TraumaOne_Mode_Of_Arrival"
+      parameters:
+        "Start_Date": "09/27/2023 00:00:00"
+        "End_Date": "09/27/2023 00:00:00"
+        "MRN:isnull": "True"
+        "rs:ParameterLanguage": ""
+        "rs:Command": "Render"
+        "rs:Format": "CSV"
+        "rc:ItemPath":Tablix1

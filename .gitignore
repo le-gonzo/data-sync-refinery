@@ -1,5 +1,4 @@
 #plugins
-etl/plugins/extractors/ssrs_extractor_plugin/
 test.py
 
 #secrets.ini

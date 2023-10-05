@@ -1,3 +1,9 @@
+general:
+  logging_level: INFO
+  log_to_file: False
+  log_filename: log
+  log_to_console: True
+
 ssrs:
   ReportServer_url: "https://webreports.hs.uci.edu/ReportServer"
   data_sources:
@@ -9,7 +15,7 @@ ssrs:
         "rs:ParameterLanguage": ""
         "rs:Command": "Render"
         "rs:Format": "CSV"
-        "rc:ItemPath":Tablix1
+        "rc:ItemPath": "Tablix1"
     ed_observation:
       report_path: "/Epic/Emergency/ED Observation"
       parameters:
@@ -18,7 +24,7 @@ ssrs:
         "rs:ParameterLanguage": ""
         "rs:Command": "Render"
         "rs:Format": "CSV"
-        "rc:ItemPath":Tablix1
+        "rc:ItemPath": "Tablix1"
     trauma_one:
       report_path: "/Epic/Emergency/UCI02_EDX_TraumaOne_Mode_Of_Arrival"
       parameters:
@@ -28,4 +34,4 @@ ssrs:
         "rs:ParameterLanguage": ""
         "rs:Command": "Render"
         "rs:Format": "CSV"
-        "rc:ItemPath":Tablix1
+        "rc:ItemPath": "Tablix1"

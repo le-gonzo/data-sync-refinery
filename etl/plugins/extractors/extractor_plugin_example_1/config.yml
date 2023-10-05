@@ -1,0 +1,8 @@
+general:
+  logging_level: INFO
+  log_to_file: False
+  log_filename: log
+  log_to_console: True
+
+extractor_settings:
+  webserver_url: "http://webservice.example.com/servicerepository"

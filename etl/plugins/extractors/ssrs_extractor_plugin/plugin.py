@@ -163,6 +163,41 @@ class SSRSExtractor(BaseExtractor):
             return full_path
         else:
             raise Exception(f"Request failed with status code {response.status_code}: {response.text}")
+        
+    def validate_connection(self):
+        """Validates if the connection to the source is successful."""
+        # This can be implemented to make a test request to SSRS to ensure the connection is valid
+
+    def handle_error(self, error):
+        """Handles errors during extraction."""
+        logging.error(f"Error during extraction: {str(error)}")
+        # Further error handling can be added as needed
+
+    def retry(self, n):
+        """Sets the number of retries in case of failed extraction attempts."""
+        # This can be implemented to retry the extraction in case of certain failures
+
+    def log(self, message, level):
+        """Logs various events or messages."""
+        numeric_level = getattr(logging, level.upper(), None)
+        if numeric_level is not None:
+            logging.log(numeric_level, message)
+        else:
+            logging.info(message)
+
+    def get_metadata(self):
+        """Retrieves metadata about the extracted data."""
+        # Placeholder for fetching metadata, can be implemented based on the SSRS capabilities
+        pass
+
+
+    def transform_at_source(self, transformation):
+        """Allows for light transformations at the source itself."""
+        # This can be implemented if SSRS allows for certain transformations during the extraction process
+
+    def set_query(self, query):
+        """Set a specific query for data extraction (mainly for databases)."""
+        # This can be implemented if SSRS supports query-based data extraction
 
     def close(self) -> None:
         """
@@ -170,6 +205,7 @@ class SSRSExtractor(BaseExtractor):
         SSRS does not require a traditional close as it's based on HTTP requests.
         """
         pass
+
 
 if __name__ == "__main__":
     """

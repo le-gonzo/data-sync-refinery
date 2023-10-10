@@ -190,7 +190,6 @@ class SSRSExtractor(BaseExtractor):
         # Placeholder for fetching metadata, can be implemented based on the SSRS capabilities
         pass
 
-
     def transform_at_source(self, transformation):
         """Allows for light transformations at the source itself."""
         # This can be implemented if SSRS allows for certain transformations during the extraction process
